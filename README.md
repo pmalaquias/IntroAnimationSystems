@@ -16,3 +16,7 @@
 - **Curves (Curvas)**: Curvas são a maneira como os valores de um Animation Clip são armazenados. Uma Animation Curve é um conjunto de Keyframes que representam a mudança de um valor ao longo do tempo. Por exemplo, uma Animation Curve pode ser usada para representar a mudança de posição de um GameObject ao longo do tempo.
 
 - **Keyframes**: Keyframes são pontos de dados em uma Animation Curve. Eles são usados para definir o valor de um Animation Curve em um determinado ponto no tempo. Keyframes são compostos de um tempo e um valor.
+
+- **Animation Blending**: A mistura de animações é o processo de combinar duas ou mais animações para criar uma nova animação. Isso é feito ajustando os pesos das animações individuais para que elas se misturem suavemente. A mistura de animações é usado para criar transições suaves entre diferentes animações.
+
+- **Animator Controller**: O Animator Controller é um ativo que controla a lógica de animação de um GameObject. Ele contém uma série de estados e transições que definem como o GameObject deve se comportar em diferentes situações. O Animator Controller é usado para controlar a reprodução de Animation Clips e para definir como as animações devem ser misturadas.

@@ -12,3 +12,7 @@
   
   1. O caminho através da Hierarquia para o componente Transform do GameObject
   2. O caminho desse componente Transform para um campo específico
+
+- **Curves (Curvas)**: Curvas são a maneira como os valores de um Animation Clip são armazenados. Uma Animation Curve é um conjunto de Keyframes que representam a mudança de um valor ao longo do tempo. Por exemplo, uma Animation Curve pode ser usada para representar a mudança de posição de um GameObject ao longo do tempo.
+
+- **Keyframes**: Keyframes são pontos de dados em uma Animation Curve. Eles são usados para definir o valor de um Animation Curve em um determinado ponto no tempo. Keyframes são compostos de um tempo e um valor.

@@ -20,3 +20,7 @@
 - **Animation Blending**: A mistura de animações é o processo de combinar duas ou mais animações para criar uma nova animação. Isso é feito ajustando os pesos das animações individuais para que elas se misturem suavemente. A mistura de animações é usado para criar transições suaves entre diferentes animações.
 
 - **Animator Controller**: O Animator Controller é um ativo que controla a lógica de animação de um GameObject. Ele contém uma série de estados e transições que definem como o GameObject deve se comportar em diferentes situações. O Animator Controller é usado para controlar a reprodução de Animation Clips e para definir como as animações devem ser misturadas.
+
+- **Modo Dopesheet**: é uma visualização condensada onde apenas os quadros-chave em si são mostrados. Essa visualização é útil quando você quer ver como os quadros-chave são dispostos, ou quando os quadros-chave representam referências de objeto em vez de valores flutuantes. Isso é comum em animação 2D, quando diferentes sprites são trocados com cada quadro-chave
+
+- **Modo Curvas**: é uma visualização detalhada que mostra todas as curvas de animação em um Animation Clip. Isso é útil quando você deseja ajustar os valores de uma curva de animação ou ver como as curvas de animação se comparam umas às outras.

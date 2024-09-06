@@ -24,3 +24,14 @@
 - **Modo Dopesheet**: é uma visualização condensada onde apenas os quadros-chave em si são mostrados. Essa visualização é útil quando você quer ver como os quadros-chave são dispostos, ou quando os quadros-chave representam referências de objeto em vez de valores flutuantes. Isso é comum em animação 2D, quando diferentes sprites são trocados com cada quadro-chave
 
 - **Modo Curvas**: é uma visualização detalhada que mostra todas as curvas de animação em um Animation Clip. Isso é útil quando você deseja ajustar os valores de uma curva de animação ou ver como as curvas de animação se comparam umas às outras.
+
+- **Configurações predefinidas de um keyframe**: Há uma série de predefinições no Unity que tornam um pouco mais fácil obter a Curva de Animação que você deseja.
+  - **Clamped Auto**: Isso significa que a Curva de Animação não ultrapassará o valor do quadro-chave e se aproximará dele suavemente.
+  - **Auto**:  Esta é uma configuração legada. A menos que você esteja lidando com Animation Clips criados no Unity 3.x, use Clamped Auto em vez disso.
+  - **Free Smooth**: esta configuração é a melhor maneira de obter uma curva suave.
+    - **Flat**: Esta é uma variação do Free Smooth onde as tangentes são exatamente horizontais.
+  - **Broken**: Isso significa que as tangentes esquerda e direita não são paralelas e apontam em direções independentes.
+    - **Free**: Esta é a opção usual para tangentes quebradas.
+    - **Linear**: Esta é uma variação de Broken que significa que as tangentes tentarão criar uma linha reta conforme a Animation Curve se aproxima do keyframe. Se as tangentes vizinhas forem ambas lineares, a Animation Curve será uma linha reta entre os keyframes.
+    - **Constant**: Esta é uma variação de Quebrado, onde a Curva de Animação tem um valor igual ao quadro-chave anterior até o próximo quadro-chave, momento em que assume o valor desse quadro-chave.
+  - **Weighted**: Você pode aplicar esta configuração além de qualquer outra configuração. Ela permite que o comprimento das tangentes seja ajustado, dando a você mais controle sobre as Curvas de Animação.

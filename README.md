@@ -35,3 +35,34 @@
     - **Linear**: Esta é uma variação de Broken que significa que as tangentes tentarão criar uma linha reta conforme a Animation Curve se aproxima do keyframe. Se as tangentes vizinhas forem ambas lineares, a Animation Curve será uma linha reta entre os keyframes.
     - **Constant**: Esta é uma variação de Quebrado, onde a Curva de Animação tem um valor igual ao quadro-chave anterior até o próximo quadro-chave, momento em que assume o valor desse quadro-chave.
   - **Weighted**: Você pode aplicar esta configuração além de qualquer outra configuração. Ela permite que o comprimento das tangentes seja ajustado, dando a você mais controle sobre as Curvas de Animação.
+
+- **Baking animations**:  Isso determina se as animações importadas como cinemática inversa (IK) ou dados de simulação devem ser convertidas em cinemática direta (FK) por meio de um processo chamado baking .
+Os clipes de animação armazenam seus dados em um formato FK, o que significa que os modelos importados com dados IK devem ser preparados para converter os dados de IK para FK.
+
+- **Resampling Animation Curves**: Esta configuração determina se as animações importadas com ângulos de Euler para suas rotações devem ter esses ângulos convertidos para ângulos de quaternion.
+Como regra geral, você deve reamostrar todas as animações que são importadas com ângulos de euler. A única exceção é se você estiver tendo problemas com a conversão, por exemplo, se uma animação fizer uma rotação maior que 180 graus entre os quadros.  
+
+## Fundamentos da animação de modelos
+
+Os modelos podem conter muitos triângulos para que cada um deles seja movido individualmente. Quanto maior a definição de um modelo, maior o número de triângulos. Em vez de mover cada triângulo individualmente durante a animação, os modelos são **skinned** antes de serem animados.
+
+Skinning dá a cada um dos vértices que compõem os triângulos uma dependência de um **'bone'**. Este bone é então movido usando dados de animação e os vértices associados descobrem onde eles devem estar com base na posição e rotação do bone.
+
+### Cinemática para direta e inversa
+
+Transforms têm uma estrutura hierárquica. Isso significa que Transforms filhos se movem em relação aos pais. O mesmo vale para bones.
+Por exemplo, a posição de um osso da mão dependeria da posição de um osso do antebraço. Isso, por sua vez, dependeria da posição de um osso do braço, e assim por diante.
+Essa dependência é conhecida como **forward kinematics** (FK) e é comumente usada para animação, pois você pode definir as propriedades de posição e rotação como desejar, para obter a animação geral desejada.
+
+Outra técnica para animação é chamada de **cinemática inversa** (IK). É onde o final de uma cadeia de ossos tem sua posição ou rotação definida, e então as posições e rotações dos ossos mais acima na cadeia são definidas por meio de um algoritmo para acomodar a posição e a rotação do osso final.
+A cinemática inversa pode ser usada para criar animações no software DCC, que podem então ser importadas para o Unity. Ela também pode ser usada para animação em tempo de execução no Unity.
+
+## Otimizando o tamanho da animação
+
+A configuração **Animation Compression** se refere a como o tamanho da animação, tanto no disco quanto na memória, pode ser reduzido fazendo aproximações do arquivo importado original. Você pode selecionar entre as seguintes opções:
+
+- **Off**: exibe a animação exatamente como foi criada, sem aproximações.
+
+- **Keyframe Reduction**: Alguns Keyframes com valores similares serão removidos para reduzir a quantidade de memória que o Animation Clip ocupa no tempo de execução. Isso também afetará a animação resultante. Se você selecionar essa configuração, obterá opções adicionais para a quantidade de erro permitida na redução.
+
+- **Optimal**: Isso fará com que o tamanho da animação seja o menor possível, dadas as configurações escolhidas para erro.

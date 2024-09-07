@@ -42,6 +42,8 @@ Os clipes de animação armazenam seus dados em um formato FK, o que significa q
 - **Resampling Animation Curves**: Esta configuração determina se as animações importadas com ângulos de Euler para suas rotações devem ter esses ângulos convertidos para ângulos de quaternion.
 Como regra geral, você deve reamostrar todas as animações que são importadas com ângulos de euler. A única exceção é se você estiver tendo problemas com a conversão, por exemplo, se uma animação fizer uma rotação maior que 180 graus entre os quadros.  
 
+- **Rigs**: Rigs são uma maneira de definir a estrutura do modelo que está sendo importado e são usados ​​para definir como as animações são reproduzidas. Neste tutorial, você aprenderá sobre Tipos de Animação e criará e configurará um ativo Avatar para um Rig Genérico.
+
 ## Fundamentos da animação de modelos
 
 Os modelos podem conter muitos triângulos para que cada um deles seja movido individualmente. Quanto maior a definição de um modelo, maior o número de triângulos. Em vez de mover cada triângulo individualmente durante a animação, os modelos são **skinned** antes de serem animados.
